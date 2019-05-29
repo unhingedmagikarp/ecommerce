@@ -1,6 +1,8 @@
 class AdminsController < ApplicationController
 
     def signin
+      puts "==================================="
+      puts params
         admin = Admin.find_by(email: params[:email])
         if admin and admin.authenticate(params[:password])
           render json: {token: issue_token({id: admin.id})}

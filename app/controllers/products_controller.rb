@@ -2,7 +2,6 @@ class ProductsController < ApplicationController
     def index
         products = Product.all
         render json: {data: products}, status: 200
-
     end
 
     def show
